@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "pua bank lrv",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

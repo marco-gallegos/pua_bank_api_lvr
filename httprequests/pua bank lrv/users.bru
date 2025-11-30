@@ -1,0 +1,20 @@
+meta {
+  name: users
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{fullurl}}/system-users/
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Token b1320b2daf2831b2e523ece89b1aeff12f96ff27
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,16 @@
+meta {
+  name: logout
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{host}}:{{port}}/api/auth/logout
+  body: json
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

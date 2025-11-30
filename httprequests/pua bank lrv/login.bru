@@ -1,0 +1,23 @@
+meta {
+  name: login
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{host}}:{{port}}/api/auth/login
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "email": "ma.galle.loae@gmail.com",
+    "password": "{{password_lrv}}"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
