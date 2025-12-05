@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('type'); // Debit, Cash
             $table->decimal('current_balance', 15, 2);
-            $table->foreignUuid('bank_id')->constrained()->onDelete('cascade');
+            // $table->foreignUuid('bank_id')->constrained()->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -1,0 +1,28 @@
+meta {
+  name: create ba
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{fullapiurl}}/bank-account
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{token}}
+}
+
+body:json {
+  {
+    "name": "banorte",
+    "type": "banco",
+    "balance" : 20
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
