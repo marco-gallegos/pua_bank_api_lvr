@@ -68,12 +68,6 @@ erDiagram
         string icon
     }
 
-    BANKS {
-        uuid id PK
-        string name
-    }
-
-
     BANK_ACCOUNTS ||--o{ TRANSACTIONS : "pays/receives"
     CREDIT_CARDS ||--o{ TRANSACTIONS : "charges"
     CATEGORIES ||--o{ TRANSACTIONS : classifies

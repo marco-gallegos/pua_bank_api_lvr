@@ -12,5 +12,6 @@ Route::group(['prefix' => 'auth'], function () {
 
 
 Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
-    Route::apiResource('bank-account', \App\Http\Controllers\BankAccountsController::class);    
+    Route::apiResource('bank-account', \App\Http\Controllers\BankAccountsController::class);
+    // Route::apiResource('category')
 });
