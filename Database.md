@@ -6,7 +6,10 @@ erDiagram
     USERS ||--o{ CREDIT_CARDS : owns
     USERS ||--o{ INVESTMENTS : owns
     USERS ||--o{ SAVINGS : owns
-    %% USERS ||--o{ CATEGORIES : defines
+    USERS ||--o{ CATEGORIES : defines
+    BANK_ACCOUNTS ||--o{ TRANSACTIONS : has
+    CREDIT_CARDS  ||--o{ TRANSACTIONS : charges
+    CATEGORIES    ||--o{ TRANSACTIONS : classifies
 
     BANK_ACCOUNTS {
         uuid id PK
@@ -62,15 +65,11 @@ erDiagram
         string type "Expense, Income, Transfer"
     }
 
-    % TODO: CATEGORIES should be linked to a single user
+    %% TODO: CATEGORIES should be linked to a single user
     CATEGORIES {
         uuid id PK
+        uuid user_id FK
         string name
         string icon
     }
-
-    BANK_ACCOUNTS ||--o{ TRANSACTIONS : "pays/receives"
-    CREDIT_CARDS ||--o{ TRANSACTIONS : "charges"
-    CATEGORIES ||--o{ TRANSACTIONS : classifies
-    
 ```
