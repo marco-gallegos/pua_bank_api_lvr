@@ -62,6 +62,7 @@ erDiagram
         string type "Expense, Income, Transfer"
     }
 
+    % TODO: CATEGORIES should be linked to a single user
     CATEGORIES {
         uuid id PK
         string name

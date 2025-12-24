@@ -14,9 +14,9 @@ class BankAccountsController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return BankAccount::where('user_id', auth()->user()->id)->get();
+        return BankAccount::where('user_id', $request->user()->id)->get();
     }
 
     /**
@@ -32,7 +32,7 @@ class BankAccountsController extends Controller
         ]);
 
         $finalData = [
-            'user_id' => auth()->user()->id,
+            'user_id' => $request->user()->id,
             'name' => $validatedData['name'],
             'type' => $validatedData['type'],
             'current_balance' => $validatedData['balance'],
