@@ -1,0 +1,31 @@
+meta {
+  name: create transaction
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{fullapiurl}}/transaction
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{token}}
+}
+
+body:json {
+  {
+    "category_id": "019b3f65-912c-72da-8f0e-3f50c8601a2b",
+    "bank_account_id": "019aed43-009b-738b-9971-4c25159bb9e7",
+    "amount" : -20,
+    "date": "2025-12-22 12:00:00",
+    "type": "expense",
+    "description": "papitas"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

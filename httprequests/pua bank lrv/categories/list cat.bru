@@ -1,0 +1,28 @@
+meta {
+  name: list cat
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{fullapiurl}}/category
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{token}}
+}
+
+body:json {
+  {
+    "name": "banorte",
+    "type": "banco",
+    "balance" : 20
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

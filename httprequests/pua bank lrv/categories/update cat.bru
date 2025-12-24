@@ -1,0 +1,27 @@
+meta {
+  name: update cat
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{fullapiurl}}/category
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{token}}
+}
+
+body:json {
+  {
+    "name": "tiendita",
+    "icon": "pizza"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
