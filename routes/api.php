@@ -17,5 +17,7 @@ Route::group(['prefix' => 'auth'], function () {
 Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function () {
     Route::apiResource('bank-account', BankAccountsController::class);
     Route::apiResource('category', CategoriesController::class);
+
     Route::apiResource('transaction', TransactionsController::class);
+    Route::get('transaction/report/current-monthly-balance', [TransactionsController::class, 'getCurrentMonthlyBalance']);
 });

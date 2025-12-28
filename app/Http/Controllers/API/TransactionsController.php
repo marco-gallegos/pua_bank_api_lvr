@@ -127,11 +127,12 @@ class TransactionsController extends Controller
 
         $totalIncome = $transactions->where('type', 'income')->sum('amount');
         $totalExpense = $transactions->where('type', 'expense')->sum('amount');
+        $balance = $transactions->whereIn('type', ['income', 'expense'])->sum('amount');
 
         return response()->json([
             'total_income' => $totalIncome,
             'total_expense' => $totalExpense,
-            'balance' => $totalIncome - $totalExpense,
+            'balance' => $balance
         ]);
     }
 }

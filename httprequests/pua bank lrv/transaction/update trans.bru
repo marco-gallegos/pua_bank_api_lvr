@@ -1,11 +1,11 @@
 meta {
-  name: update cat
+  name: update trans
   type: http
   seq: 3
 }
 
-post {
-  url: {{fullapiurl}}/category
+put {
+  url: {{fullapiurl}}/transaction/019b4eda-eb47-7242-93ed-7e9fe57615a4
   body: json
   auth: none
 }
@@ -16,8 +16,7 @@ headers {
 
 body:json {
   {
-    "name": "tiendita",
-    "icon": "pizza"
+    "amount": -19
   }
 }
 
